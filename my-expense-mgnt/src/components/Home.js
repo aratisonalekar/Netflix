@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {Box, Card, CardContent, CardMedia, Grid} from "@mui/material"
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [movies,setMovies] = useState([])
@@ -19,19 +20,21 @@ function Home() {
      console.log(movies)
 
   return (
-    <div>
+    <div style={{backgroundColor:"#171515"}}>
         <Grid container spacing={2} style={{paddingTop:"20px", paddingRight:"20px",paddingLeft:"20px"}}>
         {movies.map((movie)=>{
             return  <Grid item xs={3}>
             <Box>
-              <Card>
-                      <CardMedia
-                      component="img"
-                      height="140"
-                      image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}>
+                <Link to="/movieDetail" state={{movie:movie}}>
+                    <Card>
+                        <CardMedia
+                        component="img"
+                        height="140"
+                        image={`https://image.tmdb.org/t/p/original${movie?.poster_path}`}>
 
-                      </CardMedia>
-              </Card>
+                        </CardMedia>
+                    </Card>
+                </Link>
           </Box>
           </Grid>
         })}
