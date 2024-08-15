@@ -42,7 +42,7 @@ function Navbar() {
 
 
   return (
-    <div style={{backgroundImage:`url(https://image.tmdb.org/t/p/w500${movies[10]?.poster_path})`,
+    <div style={{backgroundImage:`linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://image.tmdb.org/t/p/w500${movies[10]?.poster_path})`,
     backgroundPosition:"center",backgroundRepeat:"no-repeat",backgroundSize:"cover",height:"500px",width:"100%"}}>
         <div style={{display:"flex",justifyContent:"space-between",padding:"20px"}}>
             <img style={{width:"70px",height:"30px"}} src={netflix} alt='netflix'/>
@@ -54,7 +54,7 @@ function Navbar() {
         <div style={{padding:"20px"}}>
             <h1 style={{color:"#D7DBDD",fontSize:"70px",fontFamily:"initial"}}>{movies[10]?.original_title}</h1>
             <h3 style={{color:"#D7DBDD"}}>{movies[10]?.overview}</h3>
-            <Button variant='container' sx={{color:"black",bgcolor:"white",fontWeight:"bold"}}>View Trailer</Button>
+            <Button variant='container' sx={{color:"black",bgcolor:"white",fontWeight:"bold"}}>Play Trailer</Button>
         </div>
     </div>
   )
