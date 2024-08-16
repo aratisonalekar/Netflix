@@ -21,6 +21,7 @@ function Home() {
      console.log(movies)
 
      const addMovie = async(movie)=>{
+        console.log(movie)
         const movieRef = doc(database, "Movies", movie.id)
         try{
            await setDoc(movieRef,{
